@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwf4tweld3o24"]
+
+[ext_resource type="Script" path="res://scripts/rod.gd" id="1_qqugb"]
+[ext_resource type="PackedScene" uid="uid://duydfplmwcm7r" path="res://scenes/hook_area.tscn" id="2_nbnpb"]
+
+[node name="Rod" type="Node2D"]
+script = ExtResource("1_qqugb")
+hook_area_scene = ExtResource("2_nbnpb")
+
+[node name="Line2D" type="Line2D" parent="."]

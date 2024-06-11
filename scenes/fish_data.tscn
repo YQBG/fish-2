@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://3ipg7ehcu2gp"]
+
+[ext_resource type="Script" path="res://scripts/fish_data.gd" id="1_i7smb"]
+[ext_resource type="Texture2D" uid="uid://dpafeoiqyxm68" path="res://assets/fishing/global.png" id="2_xxi1k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eet43"]
+atlas = ExtResource("2_xxi1k")
+region = Rect2(0, 48.9195, 17.0779, 15.0805)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o51c8"]
+radius = 3.0
+height = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3giqw"]
+radius = 2.0
+
+[node name="FishData" type="CharacterBody2D" groups=["fish"]]
+position = Vector2(356, 809)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_i7smb")
+texture = SubResource("AtlasTexture_eet43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xxi1k")
+region_enabled = true
+region_rect = Rect2(0.21447, 48.7825, 17.1616, 14.8644)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_o51c8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3giqw")

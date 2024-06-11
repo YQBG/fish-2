@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://duydfplmwcm7r"]
+
+[ext_resource type="Script" path="res://scripts/hook_area.gd" id="1_q11qi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tsalw"]
+radius = 19.0263
+
+[node name="HookArea" type="Node2D"]
+script = ExtResource("1_q11qi")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_tsalw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
