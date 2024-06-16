@@ -7,6 +7,10 @@ extends Node2D
 @onready var fish_container: Node2D = $FishContainer
 @onready var prompt_box = $PromptBox
 @onready var quantity_ui = $QuantityUI
+@onready var menu_ui = $MenuUI
+@onready var saver_loader = $Utilities/SaverLoader
+
+
 var fish_quantity: int = 0
 
 func _ready(): 
@@ -50,6 +54,10 @@ func _input(event):
 		prompt_box.get_child(0).get_child(0).text = "按O键退出钓鱼"
 	elif event.is_action_pressed("fishing_out"):
 		prompt_box.get_child(0).get_child(0).text = "按F键开始钓鱼"
+	elif event.is_action_pressed("esc"):
+		menu_ui.visible = !menu_ui.visible
+		Global.stop_the_world()
+		
 		
 #当玩家进入鱼塘区域，显示提示框
 func _on_area_2d_body_entered(body):
@@ -68,3 +76,20 @@ func _on_area_2d_body_exited(_body):
 func add_fish_count():
 	fish_quantity += 1
 	quantity_ui.add_count(fish_quantity)
+
+#点击继续游戏按钮的时候隐藏菜单面板
+func _on_menu_ui_go_game():
+	menu_ui.visible = !menu_ui.visible
+	Global.open_the_world()
+
+#保存游戏按钮
+func _on_menu_ui_save_game():
+	saver_loader.save_game(tile_map_layer.get_used_rect())
+
+#加载游戏
+func _on_menu_ui_loading_game():
+	saver_loader.load_game()
+
+#退出游戏
+func _on_menu_ui_exit_game():
+	get_tree().quit()

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SavedGame" load_steps=2 format=3 uid="uid://wc882yao7xcg"]
+
+[ext_resource type="Script" path="res://scripts/saved_game.gd" id="1_vskv4"]
+
+[resource]
+script = ExtResource("1_vskv4")
+player_position = Vector2(794.521, 502.122)
+fish_positions = Array[Vector2]([])

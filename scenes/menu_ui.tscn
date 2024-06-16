@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpjp65w4eckvg"]
+
+[ext_resource type="Script" path="res://scripts/menu_ui.gd" id="1_acfw0"]
+
+[node name="MenuUI" type="CanvasLayer"]
+script = ExtResource("1_acfw0")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SaveButton" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+text = "保存游戏"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GoButton" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+text = "继续游戏"
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LoadingButton" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+text = "加载游戏"
+
+[node name="Control3" type="Control" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitButton" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+text = "退出游戏"
+
+[connection signal="button_down" from="PanelContainer/MarginContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_button_down"]
+[connection signal="button_down" from="PanelContainer/MarginContainer/HBoxContainer/GoButton" to="." method="_on_go_button_button_down"]
+[connection signal="button_down" from="PanelContainer/MarginContainer/HBoxContainer/LoadingButton" to="." method="_on_loading_button_button_down"]
+[connection signal="button_down" from="PanelContainer/MarginContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_button_down"]

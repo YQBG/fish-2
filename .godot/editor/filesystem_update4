@@ -1,10 +1,7 @@
-res://scenes/quantity_ui.tscn
+res://scenes/home.tscn
 res://objects/our_theme.tres
 res://objects/世界.tres
-res://scenes/home.tscn
 res://scenes/player.tscn
-res://scripts/quantity_ui.gd
-res://scripts/rod.gd
-res://scripts/home.gd
-res://scenes/rod.tscn
-res://scenes/hook_area.tscn
+res://scenes/menu_ui.tscn
+res://scenes/fish_data.tscn
+res://scenes/quantity_ui.tscn

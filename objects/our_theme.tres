@@ -12,16 +12,18 @@ texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ma8xi"]
 texture = ExtResource("2_mu60t")
-texture_margin_left = 3.0
-texture_margin_top = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
 
 [resource]
 BigPanelContainer/base_type = &"PanelContainer"
 BigPanelContainer/styles/panel = SubResource("StyleBoxTexture_7viyd")
 BigText/base_type = &"Label"
 BigText/fonts/font = ExtResource("1_r8bvp")
+Button/font_sizes/font_size = 80
+Button/fonts/font = ExtResource("1_r8bvp")
 HeaderLarge/base_type = &"Label"
 HeaderLarge/font_sizes/font_size = 48
 HeaderLarge/fonts/font = ExtResource("1_r8bvp")

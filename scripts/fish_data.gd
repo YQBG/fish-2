@@ -36,8 +36,6 @@ func _physics_process(delta: float) -> void:
 	# 根据当前方向和速度计算位移
 	velocity = direction * speed * delta
 	move_and_slide()
-	# 目标移动方向
-	target_direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
 	check_boundaries()
 
 func change_direction() -> void:
